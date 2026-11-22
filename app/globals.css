@@ -1,0 +1,297 @@
+@import "tailwindcss";
+
+/* ==========================================
+   DARK THEME
+========================================== */
+
+:root {
+  color-scheme: dark;
+
+  --theme-bg: #0a0a0a;
+  --theme-card: #101010;
+  --theme-rail: #1f1f1f;
+  --theme-line: rgba(255, 255, 255, 0.08);
+  --theme-head: #ededed;
+  --theme-body: #a1a1aa;
+  --theme-muted: #71717a;
+  --theme-label: #6b6b6b;
+  --theme-dim: #52525b;
+  --theme-accent: #f97316;
+  --theme-live: #22c55e;
+}
+
+/* ==========================================
+   LIGHT THEME
+========================================== */
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --theme-bg: #fafafa;
+  --theme-card: #ffffff;
+  --theme-rail: #e4e4e7;
+  --theme-line: rgba(0, 0, 0, 0.12);
+  --theme-head: #18181b;
+  --theme-body: #3f3f46;
+  --theme-muted: #52525b;
+  --theme-label: #52525b;
+  --theme-dim: #71717a;
+  --theme-accent: #c2410c;
+  --theme-live: #15803d;
+}
+
+/* ==========================================
+   TAILWIND THEME
+========================================== */
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg: var(--theme-bg);
+  --color-card: var(--theme-card);
+  --color-rail: var(--theme-rail);
+  --color-line: var(--theme-line);
+  --color-head: var(--theme-head);
+  --color-body: var(--theme-body);
+  --color-muted: var(--theme-muted);
+  --color-label: var(--theme-label);
+  --color-dim: var(--theme-dim);
+  --color-accent: var(--theme-accent);
+  --color-live: var(--theme-live);
+
+  --animate-marquee: marquee 48s linear infinite;
+  --animate-marquee-rev: marquee 52s linear infinite reverse;
+  --animate-spin-slow: spin 6s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* ==========================================
+   GLOBAL STYLES
+========================================== */
+
+html {
+  scroll-behavior: smooth;
+  background: var(--theme-bg);
+}
+
+body {
+  background: var(--theme-bg);
+  color: var(--theme-body);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background: rgba(249, 115, 22, 0.35);
+  color: var(--theme-head);
+}
+
+:focus-visible {
+  outline: 2px solid var(--theme-accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--theme-label);
+}
+
+/* ==========================================
+   RADIX ANIMATIONS
+========================================== */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes sheet-in {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sheet-out {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes acc-down {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes acc-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+
+  to {
+    height: 0;
+  }
+}
+
+.ov[data-state="open"] {
+  animation: fade-in 0.15s ease-out;
+}
+
+.ov[data-state="closed"] {
+  animation: fade-out 0.15s ease-in;
+}
+
+.sheet[data-state="open"] {
+  animation: sheet-in 0.2s ease-out;
+}
+
+.sheet[data-state="closed"] {
+  animation: sheet-out 0.15s ease-in;
+}
+
+.pop[data-state="open"] {
+  animation: pop-in 0.15s ease-out;
+}
+
+.acc[data-state="open"] {
+  animation: acc-down 0.2s ease-out;
+}
+
+.acc[data-state="closed"] {
+  animation: acc-up 0.2s ease-out;
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+.scroll-hide {
+  scrollbar-width: none;
+}
+
+.scroll-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==========================================
+   LIVE BANNER ANIMATIONS
+========================================== */
+
+@keyframes aurora {
+  0%, 100% {
+    transform: translate3d(-8%, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(10%, -6%, 0) scale(1.15);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.15;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.7;
+  }
+
+  to {
+    transform: translateY(-140px);
+    opacity: 0;
+  }
+}
+
+@keyframes ridge {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    transition: none;
+  }
+
+  .ov,
+  .sheet,
+  .pop,
+  .acc,
+  .live-anim {
+    animation: none !important;
+  }
+}
