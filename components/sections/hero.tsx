@@ -41,7 +41,7 @@ export function Hero() {
           <LiveBanner />
         </Item>
 
-        <Item className="relative -mt-14 px-4 sm:px-6">
+        <Item className="relative -mt-10 px-4 sm:-mt-14 sm:px-6">
           <div className="relative w-fit">
             <span
               aria-hidden
@@ -53,24 +53,46 @@ export function Hero() {
                 <path d="M2 16c10-14 22-14 32-4M34 12l-6-1M34 12l-2 6" />
               </svg>
             </span>
+
             <motion.button
               onClick={() => setSpin((s) => s + 360)}
               animate={{ rotate: spin }}
-              transition={{ type: "spring", stiffness: 120, damping: 14 }}
+              transition={{
+                type: "spring",
+                stiffness: 120,
+                damping: 14,
+              }}
               aria-label="Say hi"
               className="block rounded-full"
             >
-              <Avatar size={112} className="rounded-full border-4 border-bg text-3xl" />
+              {/* Mobile Avatar */}
+              <span className="block sm:hidden">
+                <Avatar
+                  size={80}
+                  className="rounded-full border-4 border-bg text-xl"
+                />
+              </span>
+
+              {/* Tablet and Desktop Avatar */}
+              <span className="hidden sm:block">
+                <Avatar
+                  size={112}
+                  className="rounded-full border-4 border-bg text-3xl"
+                />
+              </span>
             </motion.button>
+
           </div>
         </Item>
 
         <Item className="mt-6 px-1">
-          <h1 className="text-[32px] font-semibold leading-[1.15] tracking-tight text-head sm:text-[40px]">
+          <h1 className="text-[26px] font-semibold leading-[1.2] tracking-tight text-head sm:text-[40px]">
             Hi, I&apos;m{" "}
             <span className="underline decoration-accent decoration-[3px] underline-offset-[6px]">{profile.name}</span>
           </h1>
-          <p className="text-[32px] font-semibold leading-[1.15] tracking-tight text-muted sm:text-[40px]">{profile.role}</p>
+          <p className="text-[26px] font-semibold leading-[1.2] tracking-tight text-muted sm:text-[40px]">
+            {profile.role}
+          </p>
         </Item>
 
         <Item className="mt-6 px-1">
@@ -80,7 +102,7 @@ export function Hero() {
           </p>
         </Item>
 
-        <Item className="mt-8 flex flex-wrap gap-3 px-1">
+        <Item className="mt-8 flex flex-col gap-3 px-1 sm:flex-row sm:flex-wrap">
           <Button asChild variant="default">
             <a href={profile.resume} target="_blank" rel="noreferrer"><FileText size={16} /> Resume / CV</a>
           </Button>

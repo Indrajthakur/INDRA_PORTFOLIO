@@ -141,7 +141,7 @@ export function Projects() {
 
                 {/* LIVE WEBSITE & GITHUB */}
 
-                <div className="flex shrink-0 items-center gap-2">
+               <div className="flex shrink-0 items-center gap-1">
                   {p.liveUrl && (
                     <a
                       href={p.liveUrl}
@@ -149,7 +149,7 @@ export function Projects() {
                       rel="noreferrer"
                       title="Live website"
                       aria-label={`${p.title} live website`}
-                      className="text-muted transition-colors hover:text-accent"
+                     className="inline-flex size-10 items-center justify-center rounded-lg text-muted transition-colors hover:bg-white/5 hover:text-accent"
                     >
                       <Globe size={16} />
                     </a>
@@ -162,7 +162,7 @@ export function Projects() {
                       rel="noreferrer"
                       title="GitHub repository"
                       aria-label={`${p.title} GitHub repository`}
-                      className="text-muted transition-colors hover:text-head"
+                      className="inline-flex size-10 items-center justify-center rounded-lg text-muted transition-colors hover:bg-white/5 hover:text-head"
                     >
                       <BrandIcon
                         name="github"

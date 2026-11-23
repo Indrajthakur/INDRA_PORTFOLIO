@@ -89,7 +89,9 @@ export function Header() {
           : "border-transparent bg-transparent"
       )}
     >
-      <div className="mx-auto flex h-16 w-full max-w-[680px] items-center justify-between gap-3 px-5 min-[1100px]:px-6">
+     
+<div className="mx-auto flex h-14 w-full max-w-[680px] items-center justify-between gap-2 px-4 sm:h-16 sm:gap-3 sm:px-5 min-[1100px]:px-6">
+
 
         {/* AVATAR */}
 
@@ -183,7 +185,7 @@ export function Header() {
                 </DialogClose>
               </div>
 
-              <nav className="flex flex-col">
+              <nav className="flex flex-col gap-1">
                 {nav.map((n) => (
                   <a
                     key={n.label}
@@ -195,7 +197,9 @@ export function Header() {
                     rel={
                       n.label === "Resume" ? "noreferrer" : undefined
                     }
-                    className="flex min-h-12 items-center border-b border-line text-base text-head transition-colors hover:text-accent"
+                    
+className="flex min-h-12 items-center rounded-lg border-b border-line px-3 text-base font-medium text-head transition-colors duration-200 hover:bg-white/5 hover:text-accent focus-visible:outline-2 focus-visible:outline-accent"
+
                   >
                     {n.label}
                   </a>

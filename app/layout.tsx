@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+// @ts-ignore: Next.js handles CSS imports; this project currently lacks the CSS module type declaration.
 import "./globals.css";
 
 export const metadata: Metadata = {

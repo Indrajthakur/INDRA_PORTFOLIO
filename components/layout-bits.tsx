@@ -39,12 +39,19 @@ export function Section({
     <>
       {!first && <Divider />}
       <section id={id} aria-labelledby={title ? `${id}-title` : undefined} className="scroll-mt-20">
-        <Stagger className="mx-auto w-full max-w-[680px] px-5 py-12 min-[1100px]:px-6 md:py-14">
+        
+<Stagger className="mx-auto w-full max-w-[680px] px-4 py-10 md:px-5 md:py-14 min-[1100px]:px-6">
+
           {title && (
-            <Item className="mb-8 flex items-end justify-between gap-4">
+            <Item className="mb-6 flex items-end justify-between gap-4 md:mb-8">
               <div className="space-y-3">
                 {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-                <h2 id={`${id}-title`} className="text-[28px] font-semibold leading-tight tracking-tight text-head">
+                
+<h2
+  id={`${id}-title`}
+  className="text-[24px] font-semibold leading-tight tracking-tight text-head sm:text-[28px]"
+>
+
                   {title}
                 </h2>
               </div>
