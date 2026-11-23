@@ -25,8 +25,9 @@ export function About() {
       <Item className="flex flex-col gap-8 sm:flex-row">
 
         {/* Profile Avatar */}
-        <div className="shrink-0">
-          <div className="relative w-[180px]">
+        <div className="shrink-0">npm run build
+          <div className="relative mx-auto w-[180px] sm:mx-0">
+
             <div className="absolute -inset-1 rounded-2xl bg-accent/20 blur-lg" />
 
             <Image
