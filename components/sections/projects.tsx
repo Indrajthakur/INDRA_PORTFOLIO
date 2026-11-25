@@ -21,11 +21,18 @@ const techIcons: Record<string, BrandKey> = {
   React: "react",
   "Next.js": "nextjs",
   "Node.js": "nodejs",
+  "Express.js": "express",
+  PostgreSQL: "postgresql",
+  JWT: "jwt",
   MongoDB: "mongodb",
   "Tailwind CSS": "tailwind",
   Supabase: "supabase",
   Vite: "vite",
   "C++": "cplusplus",
+  Render: "render",
+  Vercel: "vercel",
+  Postman: "postman",
+  Docker: "docker",
 };
 
 export function Projects() {

@@ -89,28 +89,32 @@ export const skillsRow1: {
   name: string;
   brand: BrandKey;
 }[] = [
-    { name: "C++", brand: "cplusplus" },
-    { name: "JavaScript", brand: "javascript" },
-    { name: "TypeScript", brand: "typescript" },
-    { name: "HTML5", brand: "html5" },
-    { name: "CSS", brand: "css" },
-    { name: "React", brand: "react" },
-    { name: "Next.js", brand: "nextjs" },
-    { name: "Node.js", brand: "nodejs" },
-    { name: "MongoDB", brand: "mongodb" },
-    { name: "Tailwind CSS", brand: "tailwind" },
-  ];
+  { name: "C++", brand: "cplusplus" },
+  { name: "JavaScript", brand: "javascript" },
+  { name: "TypeScript", brand: "typescript" },
+  { name: "HTML5", brand: "html5" },
+  { name: "CSS", brand: "css" },
+  { name: "React", brand: "react" },
+  { name: "Next.js", brand: "nextjs" },
+  { name: "Tailwind CSS", brand: "tailwind" },
+  { name: "Node.js", brand: "nodejs" },
+  { name: "Express.js", brand: "express" },
+  { name: "MongoDB", brand: "mongodb" },
+  { name: "PostgreSQL", brand: "postgresql" },
+  { name: "JWT Authentication", brand: "jwt" },
+];
 
 export const skillsRow2: {
   name: string;
   brand: BrandKey;
 }[] = [
-    { name: "Git", brand: "git" },
-    { name: "GitHub", brand: "github" },
-    { name: "Supabase", brand: "supabase" },
-    { name: "Vercel", brand: "vercel" },
-    { name: "Vite", brand: "vite" },
-  ];
+  { name: "Git", brand: "git" },
+  { name: "GitHub", brand: "github" },
+  { name: "Supabase", brand: "supabase" },
+  { name: "Vercel", brand: "vercel" },
+  { name: "Vite", brand: "vite" },
+  { name: "Render", brand: "render" },
+];
 
 // ==================== EXPERIENCE ====================
 
@@ -249,20 +253,27 @@ export const projects = [
     ribbon: "CYBERPUNK",
     hue: 165,
   },
-  {
-    title: "Task Manager — Supabase",
-    subtitle: "Cloud-powered task management",
-    description:
-      "A full-stack productivity application with user authentication, task priorities, due dates, search filters and cloud-based task storage.",
-    tech: ["HTML5", "CSS3", "JavaScript", "Supabase"],
-    github: "https://github.com/Indrajthakur/Task-manager-app",
-    liveUrl:
-      "https://task-manager-ax4n0fhoe-amra8.vercel.app/auth.html",
-    live: true,
-    image: "/projects/task-manager-supabase.png",
-    ribbon: "FULL-STACK",
-    hue: 270,
-  },
+ {
+  title: "Full-Stack Task Manager",
+  subtitle: "Cloud-powered productivity platform",
+  description:
+    "A full-stack task management application featuring JWT authentication, bcrypt password hashing, private user accounts, RESTful CRUD operations, task priorities, deadlines, search filters and persistent PostgreSQL cloud storage.",
+ tech: [
+  "Node.js",
+  "PostgreSQL",
+  "Express.js",
+  "JavaScript",
+  "JWT",
+  "HTML5",
+  "CSS3",
+],
+  github: "https://github.com/Indrajthakur/Task-manager-app",
+  liveUrl: "https://task-manager-app-five-virid.vercel.app/auth.html",
+  live: true,
+  image: "/projects/task-manager-supabase.png",
+  ribbon: "FULL-STACK",
+  hue: 270,
+},
 ];
 
 // ==================== ABOUT ====================

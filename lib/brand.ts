@@ -3,6 +3,7 @@ import {
   siTailwindcss, siRedux, siGraphql, siPrisma, siPython, siGo, siRust, siHtml5,
   siDocker, siGit, siGithub, siFigma, siVercel, siRedis, siSupabase, siFirebase, siLinux, siPostman,
   siVite, siFramer, siShadcnui, siNpm, siBun, siStripe, siX, siInstagram, siGoogle, siCplusplus, siCss,
+  siJsonwebtokens, siRender,
 } from "simple-icons";
 
 export type Brand = { title: string; hex: string; path: string };
@@ -22,6 +23,8 @@ export const brands = {
   supabase: siSupabase, firebase: siFirebase, linux: siLinux, postman: siPostman, vite: siVite,
   framer: siFramer, shadcn: siShadcnui, npm: siNpm, bun: siBun, stripe: siStripe,
   x: siX, instagram: siInstagram, google: siGoogle, linkedin, cplusplus: siCplusplus, css: siCss,
+  jwt: siJsonwebtokens,
+render: siRender,
 } satisfies Record<string, Brand>;
 
 export type BrandKey = keyof typeof brands;
